@@ -17,7 +17,7 @@
 #'
 #'
 cumsumbelow <- function(vals){
-  if(class(vals) != "numeric" & class(vals) != "integer")
+  if(class(vals[1]) != "numeric" & class(vals[1]) != "integer")
     stop("values entered must be numeric")
   unlist( lapply(vals, function(x,y){
       if(is.na(x)){ NA } else { sum(y[y <= x], na.rm = TRUE) } }, y = na.omit(vals)) )
